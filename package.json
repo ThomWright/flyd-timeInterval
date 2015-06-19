@@ -26,8 +26,7 @@
   },
   "homepage": "https://github.com/ThomWright/flyd-timeInterval",
   "dependencies": {
-    "flyd": "^0",
-    "flyd-every": "0.0.1"
+    "flyd": "^0"
   },
   "devDependencies": {
     "babel": "^5.4.7",
@@ -36,6 +35,7 @@
     "chai": "^3",
     "eslint": "^0",
     "eslint-plugin-react": "^2.3.0",
+    "flyd-every": "0.0.1",
     "mocha": "^2.2.5",
     "rimraf": "^2.3.4"
   }
