@@ -1,6 +1,6 @@
 {
   "name": "flyd-timeinterval",
-  "version": "0.1.2",
+  "version": "0.1.0",
   "description": "Emits values on successive animation frames.",
   "main": "dist/onAnimationFrame.js",
   "scripts": {
