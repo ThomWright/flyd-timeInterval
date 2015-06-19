@@ -15,12 +15,15 @@ Emits values on successive animation frames.
 **Usage**
 
 ```javascript
+import every from 'flyd-every';
+import timeInterval from 'flyd-timeinterval';
+
 const stream = every(1000);
-const onFrame = timeInterval(stream);
+const deltas = timeInterval(stream);
 
 flyd.map(function(x) {
   console.log('Output', x);
-}, onFrame);
+}, deltas);
 
 // Output { interval: 0 }
 // Output { interval: 1002 }
