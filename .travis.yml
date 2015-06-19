@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- '0.12'
+- '0.10'
+sudo: false
+deploy:
+  provider: npm
+  email: npm@thomwright.co.uk
+  api_key:
+    secure: SF7zwhmQJC51wnT8OfFwJwTMioh1F/BlBnNind/89iOe75qnrW2K8j6NNxPIM/POVMPLk8/t4qVa12G/xdBbP8gj/fwfmOemTE0A/LiWl+i+BZvo8Ft11Un+gqN3c9Dm7HI8uGmOnyXitbpCGCMqlWA0Ktyyb+99PYD2I+VpNwXFC+IQWW1IqjR+fbyajzVIB8FlB5l/tz/vzPRxSu6IVpAqpY65vOYRacnM/hIwfSwVoOfptPAdGRVyMqK5DBqSiGOvaHDeEoKavb1NYUJA+JJfpC0pGhC5rFxiTydOc3gzqoCpCTD+RoEnHFUScs6YeEDyGqZFU/yJf5QcNLVteZfs+JLtz4OgwCDZrciVN9PCoii8NU70QUOTdIxbBwoXy+9t6CiFKDp6rWswCP/Bby9SxjrYYljjmShuWjEh/reSoGIRQa3iYSR2lHTwJIKr+LlV35OIKGXRCrbG8P3Xoz0viQ1rJv/VmT0wkM2peQ0hdRBU3FoLRjULQ9xHty8h68+xi1NZQNuTdVLgopVlm9lJA6xreooENP3Dnzwy+ipg6Ogml8yEFWgK+J38ez53Rinnp/Dl4tmW4TTt6XykOvCmHZsWl5d6n/davoIu9qxUGgKaiySNA/HIL8C+DWMuXeuhv8IFFqoBMHRzspR5DBqOXaYhriu4A/Zz5EWvOGM=
+  on:
+    tags: true
+    repo: ThomWright/flyd-timeInterval
+notifications:
+  email:
+    on_success: never
+    on_failure: always
