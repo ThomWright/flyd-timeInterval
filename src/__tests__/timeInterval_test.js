@@ -25,29 +25,31 @@ const bounds = function(val, tolerance) {
 
 describe('timeInterval', function() {
 
-  it('should pass through the wrapped stream\'s output', function(done) {
-    const value = 0,
-          stream = flyd.stream(),
-          deltas = timeInterval(stream);
+  it('should allow separate use of original stream and timed', function(done) {
+    let value = 0;
+    const stream = every(INTERVAL).map(() => ++value),
+          intervalStream = timeInterval(stream);
 
-    flyd.stream([deltas], () => {
-      expect(deltas().value).to.equal(value);
-      done();
+    flyd.stream([intervalStream, stream], () => {
+      if (value < LIMIT) {
+        expect(stream()).to.equal(value);
+      } else {
+        stream.end(true);
+        done();
+      }
     });
-
-    stream({value});
   });
 
   it('should time correctly', function(done) {
     const stream = every(INTERVAL),
-          deltas = timeInterval(stream),
+          intervalStream = timeInterval(stream),
           intervals = [];
     let i = 0;
 
-    flyd.stream([deltas], () => {
+    flyd.stream([intervalStream], () => {
       i++;
       if (i > 1) { // ignore first interval - it'll be 0
-        intervals.push(deltas().interval);
+        intervals.push(intervalStream());
       }
       if (i === LIMIT) {
         stream.end(true);

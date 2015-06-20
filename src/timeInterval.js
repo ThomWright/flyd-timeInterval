@@ -6,10 +6,7 @@ export default function(inputStream) {
   return flyd.stream([inputStream], (outputStream) => {
     lastTime = lastTime || Date.now();
 
-    const input = inputStream();
-    const output = Object.assign({
-      interval: Date.now() - lastTime
-    }, input);
+    const output = Date.now() - lastTime;
 
     lastTime = Date.now();
 

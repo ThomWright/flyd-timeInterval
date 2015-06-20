@@ -18,16 +18,16 @@ Records the time interval between consecutive values emitted from a stream.
 import every from 'flyd-every';
 import timeInterval from 'flyd-timeinterval';
 
-const stream = every(1000);
-const deltas = timeInterval(stream);
+const stream = every(INTERVAL),
+      intervalStream = timeInterval(stream);
 
-flyd.map(function(x) {
-  console.log('Output', x);
-}, deltas);
+flyd.stream([intervalStream, stream], () => {
+  console.log('Interval:', intervalStream(), ', Time:', stream());
+});
 
-// Output { interval: 0 }
-// Output { interval: 1002 }
-// Output { interval: 1005 }
-// Output { interval: 991 }
-// Output { interval: 1000 }
+// Interval: 0 , Time: 1434814906566
+// Interval: 200 , Time: 1434814906767
+// Interval: 200 , Time: 1434814906967
+// Interval: 200 , Time: 1434814907167
+// Interval: 199 , Time: 1434814907366
 ```
