@@ -6,7 +6,7 @@ flyd-timeInterval
 [![David](https://img.shields.io/david/ThomWright/flyd-timeInterval.svg?style=flat-square)](https://david-dm.org/ThomWright/flyd-timeInterval)
 [![David](https://img.shields.io/david/dev/ThomWright/flyd-timeInterval.svg?style=flat-square)](https://david-dm.org/ThomWright/flyd-timeInterval#info=devDependencies)
 
-Emits values on successive animation frames.
+Records the time interval between consecutive values emitted from a stream.
 
 **Signature**
 
