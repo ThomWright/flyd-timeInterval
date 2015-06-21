@@ -1,7 +1,7 @@
 {
   "name": "flyd-timeinterval",
   "version": "0.2.2",
-  "description": "Emits values on successive animation frames.",
+  "description": "Records the time interval between consecutive values emitted from a stream.",
   "main": "dist/onAnimationFrame.js",
   "scripts": {
     "build": "rimraf dist && babel src --out-dir dist --optional es7.objectRestSpread --optional runtime --ignore \"__tests__\"",
