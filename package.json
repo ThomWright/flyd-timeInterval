@@ -16,7 +16,9 @@
     "url": "https://github.com/ThomWright/flyd-timeInterval"
   },
   "keywords": [
-    "requestAnimationFrame",
+    "interval",
+    "time",
+    "delta",
     "flyd"
   ],
   "author": "Thom Wright <npm@thomwright.co.uk> (http://thomwright.co.uk/)",
