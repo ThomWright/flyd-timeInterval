@@ -22,7 +22,7 @@ const stream = every(INTERVAL),
       intervalStream = timeInterval(stream);
 
 flyd.stream([intervalStream, stream], () => {
-  console.log('Interval:', intervalStream(), ', Time:', stream());
+  console.log('Interval:', intervalStream().interval, ', Time:', intervalStream().time);
 });
 
 // Interval: 0 , Time: 1434814906566

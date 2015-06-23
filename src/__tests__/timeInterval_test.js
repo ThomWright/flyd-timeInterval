@@ -48,8 +48,8 @@ describe('timeInterval', function() {
 
     flyd.stream([intervalStream], () => {
       i++;
-      if (i > 1) { // ignore first interval - it'll be 0
-        intervals.push(intervalStream());
+      if (i > 1) { // ignore first interval - it could be 0 <= x <= INTERVAL
+        intervals.push(intervalStream().interval);
       }
       if (i === LIMIT) {
         stream.end(true);
