@@ -1,6 +1,6 @@
 {
   "name": "flyd-timeinterval",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "description": "Records the time interval between consecutive values emitted from a stream.",
   "main": "dist/timeInterval.js",
   "scripts": {
